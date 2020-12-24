@@ -1,0 +1,11 @@
+version: "3.5"
+services: 
+    php:
+        build: .docker/php
+        working_dir: /home/app
+        volumes: 
+            - './:/home/app/'
+            - '/$USER/.composer/cache:/root/.composer/cache'
+        environment: 
+            - "XDEBUG_MODE=develop,debug"
+            - XDEBUG_CONFIG="cli_color=1 client_host=172.17.0.1 client_port=9000"

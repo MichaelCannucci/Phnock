@@ -1,0 +1,32 @@
+{
+    "name": "mcannucci/phnock",
+    "description": "Mock HTTP requests",
+    "type": "library",
+    "authors": [
+        {
+            "name": "MichaelCannucci",
+            "email": "Michael.Cannucci@trader.ca"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.2",
+        "codeception/aspect-mock": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Phnock\\": "src/",
+            "Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^0.12.63",
+        "phpunit/phpunit": "^8.5",
+        "guzzle/guzzle": "^3.9",
+        "rawr/cross-data-providers": "^2.3"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --testdox",
+        "analyse": "vendor/bin/phpstan analyse -l8 src/"
+    }
+}
