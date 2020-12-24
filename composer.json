@@ -26,6 +26,7 @@
         "rawr/cross-data-providers": "^2.3"
     },
     "scripts": {
+        "all": "composer analyse && composer test",
         "test": "vendor/bin/phpunit --testdox",
         "analyse": "vendor/bin/phpstan analyse -l8 src/"
     }
