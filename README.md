@@ -14,7 +14,7 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Built With
 
-* [CodeCeption/AspectMock](https://github.com/Codeception/AspectMock) - The web framework used
+* [CodeCeption/AspectMock](https://github.com/Codeception/AspectMock) - The underlying mocking framework used
 
 ## Versioning
 
