@@ -15,6 +15,9 @@ class NamespaceFinder
       if(!is_dir($path)) { continue; }
       // Search for curl_exec and then search those files for the matches on namespace (take only the matches)
       $raw = shell_exec("grep -lRIP '$function\(.+\)' $path | xargs grep -hoP 'namespace [\\a-zA-Z0-9]+;'") ?? '';
+      if (!$raw) {
+        throw new \RuntimeException("Grep command has failed unexpectedly");
+      }
       $namespaces = explode("\n", $raw);
       foreach ($namespaces as $namespace) {
         $resultingNamespaces[] = trim(str_replace(['namespace',';'], '', $namespace));
