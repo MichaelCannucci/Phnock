@@ -1,6 +1,6 @@
 <?php
 
-namespace Phnock\Models\ResponseTypes;
+namespace Phnock\ResponseTypes;
 
 use Phnock\Exceptions\ResponseUnresolvable;
 use RuntimeException;

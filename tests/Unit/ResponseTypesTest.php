@@ -2,8 +2,8 @@
 
 namespace Tests\Unit;
 
-use Phnock\Models\ResponseTypes\FileResponse;
-use Phnock\Models\ResponseTypes\IterableResponse;
+use Phnock\ResponseTypes\FileResponse;
+use Phnock\ResponseTypes\IterableResponse;
 use Phnock\Traits\HTTPMock;
 use PHPUnit\Framework\TestCase;
 use Tests\Mock\CurlNetworkRequest;

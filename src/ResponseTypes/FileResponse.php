@@ -1,9 +1,9 @@
 <?php
 
-namespace Phnock\Models\ResponseTypes;
+namespace Phnock\ResponseTypes;
 
 use Phnock\Exceptions\ResponseUnresolvable;
-use Phnock\Models\ResponseTypes\ResponseTypeInterface;
+use Phnock\ResponseTypes\ResponseTypeInterface;
 
 final class FileResponse implements ResponseTypeInterface
 {

@@ -2,7 +2,7 @@
 
 namespace Phnock\Network;
 
-use Phnock\Models\ResponseTypes\ResponseTypeInterface;
+use Phnock\ResponseTypes\ResponseTypeInterface;
 use Phnock\Exceptions\OverwriteFailedException;
 
 
