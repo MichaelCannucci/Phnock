@@ -26,4 +26,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Shamelessly basing the name of [nock](https://github.com/nock/nock)
+* Shamelessly basing the name off [nock](https://github.com/nock/nock)

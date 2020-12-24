@@ -2,26 +2,38 @@
 
 namespace Phnock\Models\ResponseTypes;
 
+use Phnock\Exceptions\ResponseUnresolvable;
+use RuntimeException;
+use Traversable;
+
 class IterableResponse implements ResponseTypeInterface
 {
-  /** @var iterable<string> */
+  /** @var string[]> */
   protected $iterable;
 
   /** @param iterable<string> $iterable */
   public function __construct(iterable $iterable)
   {
-    $this->iterable = $iterable;
+    if(is_array($iterable)) {
+      $this->iterable = $iterable;
+    } elseif($iterable instanceof Traversable) {
+      $this->iterable = iterator_to_array($iterable);
+    } else {
+      throw new RuntimeException("Iterable must be Traversable or an array");
+    }
   }
   /** @param iterable<string> $iterable */
   public static function from(iterable $iterable): self
   {
-   return new self($iterable);
+    return new self($iterable);
   }
-  /** @return \Generator<string> */
-  public function unwrap()
+  public function unwrap(): string
   {
-    foreach ($this->iterable as $response) {
-      yield $response;
+    $value = current($this->iterable);
+    next($this->iterable);
+    if(false === $value) {
+      throw new ResponseUnresolvable("Iterable Response contains no more elements");
     }
+    return $value;
   }
 }
