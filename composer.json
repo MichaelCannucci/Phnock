@@ -9,10 +9,6 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {
-        "php": "^7.2",
-        "codeception/aspect-mock": "^3.1"
-    },
     "autoload": {
         "psr-4": {
             "Phnock\\": "src/",
@@ -29,5 +25,8 @@
         "all": "composer analyse && composer test",
         "test": "vendor/bin/phpunit --testdox",
         "analyse": "vendor/bin/phpstan analyse -l8 src/"
+    },
+    "require": {
+        "mcannucci/aspect-override": "^0.2.0"
     }
 }

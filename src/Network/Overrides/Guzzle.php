@@ -2,22 +2,20 @@
 
 namespace Phnock\Network\Overrides;
 
-use AspectMock\Test;
+use AspectOverride\Override;
 use Guzzle\Http\Client;
 use Guzzle\Http\Message\RequestInterface;
 use Guzzle\Http\Message\Response;
 
 class Guzzle implements OverrideInterface
 {
-  public function setup(): void  {}
-
   public function isValid(): bool
   {
     return class_exists(Client::class);
   }
   public function hook(callable $getContentFn): void 
   {
-    Test::double(Client::class,['send' => function($requests) use ($getContentFn) {
+    Override::method(Client::class, 'send', function($requests) use ($getContentFn) {
       $asUrl = function(RequestInterface $request) {
         return $request->getUrl() . $request->getQuery();
       };
@@ -31,6 +29,6 @@ class Guzzle implements OverrideInterface
         return array_map($asResponse, array_map($getContentFn, array_map($asUrl, $requests)));
       }
       return $asResponse($getContentFn($asUrl($requests)));
-    }]);
+    });
   }
 }

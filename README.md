@@ -17,9 +17,13 @@ Within the bootstrap file include Phnock::bootstrap() method with all the direct
 
 use Phnock\Phnock;
 
+// options are:
+// directories => which directories to mock
+// temporaryFilesDir => where to save the temporary files, by default it is /tmp/
+// disableCaching => whether aspect classes should use their previously creating files if there are no changes
 require __DIR__ . "/../vendor/autoload.php";
 Phnock::bootstrap([
-  'includePaths' => [
+  'directories' => [
     __DIR__.'/../src',
     __DIR__.'/../vendor/guzzle',
   ]
@@ -95,7 +99,7 @@ composer analyse
 
 ## Built With
 
-* [CodeCeption/AspectMock](https://github.com/Codeception/AspectMock) - The underlying mocking framework used
+* [mcannucci/aspect-override](https://github.com/MCannucci/aspect-override)
 
 ## Versioning
 
@@ -108,3 +112,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Shamelessly basing the name off [nock](https://github.com/nock/nock)
+* [CodeCeption/AspectMock](https://github.com/Codeception/AspectMock) was the starting point for the project (and a great library)

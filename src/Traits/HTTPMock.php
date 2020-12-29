@@ -21,7 +21,6 @@ trait HTTPMock
     if(empty($this->overrides)) {
       foreach([new Curl(),new Guzzle()] as $override) {
         if($override->isValid()) {
-          $override->setup();
           $this->overrides[] = $override;
         }
       }
