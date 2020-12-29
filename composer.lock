@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "mcannucci/aspect-override",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MCannucci/aspect-override.git",
-                "reference": "0347d6d45f2e4cfd66326f4d7d8638f4e0287bde"
+                "reference": "4ddade6ae4ee3e5f8323b7b4e9d3de03d4d05e54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MCannucci/aspect-override/zipball/0347d6d45f2e4cfd66326f4d7d8638f4e0287bde",
-                "reference": "0347d6d45f2e4cfd66326f4d7d8638f4e0287bde",
+                "url": "https://api.github.com/repos/MCannucci/aspect-override/zipball/4ddade6ae4ee3e5f8323b7b4e9d3de03d4d05e54",
+                "reference": "4ddade6ae4ee3e5f8323b7b4e9d3de03d4d05e54",
                 "shasum": ""
             },
             "require": {
@@ -48,9 +48,9 @@
             "description": "Override functions through aspects",
             "support": {
                 "issues": "https://github.com/MCannucci/aspect-override/issues",
-                "source": "https://github.com/MCannucci/aspect-override/tree/0.2.0"
+                "source": "https://github.com/MCannucci/aspect-override/tree/0.2.1"
             },
-            "time": "2020-12-29T00:36:04+00:00"
+            "time": "2020-12-29T14:17:22+00:00"
         },
         {
             "name": "nikic/php-parser",
